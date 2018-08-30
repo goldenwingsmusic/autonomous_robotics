@@ -1,0 +1,42 @@
+
+What is it?
+~~~~~~~~~~~
+
+In this package you'll find the Khepera robot serial communication routines
+for MATLAB for the Un*x environment.  In particular, these are kopen, ksend
+and kclose.  They were developed as part of a research project to exploit
+the Khepera robot on Un*x workstations.  They are aimed to be same (where
+appropiate) functionality wise than those for the PC or Mac.
+
+This package is (C) 1999 Matthias Grimrath <m.grimrath@tu-bs.de>. 
+Modifications are (C) by their respective owners.
+
+For installation instructions see 'Makefile'.
+
+Legal
+~~~~~
+
+Khepera is a trademark of the K-Team S.A.
+MATLAB is a trademark of The Mathworks, Inc.
+Macintosh is a trademark of Apple Corp.
+
+This package is distributed under the GNU GPL.  See below for details. 
+Please note that using the routines in this package from within MATLAB is
+considered to be only a 'use' of it.  Thus programs calling only these
+functions from within MATLAB need not comply to the GPL.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program;  if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave., Cambridge, MA 02139, USA.
+
+The complete text of the GNU General Public License is included in all Linux
+distributions, and is online availabe at <http://www.gnu.org>
