@@ -4,11 +4,15 @@ function [stopped] = move( h,l,r,distance )
     kSetEncoders(h,0,0);
     kSetSpeed(h,l,r);
     while abs(kGetEncoders(h)) <= steps        
-        distances = readDistances(h);
-            if distances(1) >= 2 && distances(8) <=2.2
+        distances = readDistances(h)
+            if distances(1) >= 2 || distances()
                 stopped =1;
                 break;
             end
+        end
+        if stopped == 1
+            break;
+        end
         plotSensors(distances);
     end
     kStop(h);

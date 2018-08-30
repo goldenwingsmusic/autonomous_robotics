@@ -14,7 +14,7 @@ end
     kSetSpeed(h,left_velocity,right_velocity);
     
     while abs(kGetEncoders(h)) <= steps
-        plotSensors(h);
+        
     end
     kStop(h);
 end
