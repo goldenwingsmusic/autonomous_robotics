@@ -1,0 +1,39 @@
+function [h] = navigate(h, points, velocity,prevangle )
+
+global prev_encoders;
+global actual_x;
+global actual_y;
+global actual_theta;
+
+prev_encoders = zeros(2,1);
+actual_x = points(1,1);
+actual_y = points(1,2);
+actual_theta = prevangle;
+
+updateOdometry(h);
+[m,n] = size(points);
+
+for i = 1:m-1
+    x = points(i+1,1)-points(i,1);
+    y = points(i+1,2)-points(i,2);
+
+    distance=abs(sqrt(x^2+y^2));    
+    angle = atan2(y,x)-prevangle;
+    
+    rotate(h,160,angle);
+    stopped = move(h,velocity,velocity,distance);
+    
+    while (stopped == 1)
+        rotateWhenObstacle(h);
+        move(h,velocity,velocity,100);
+        
+        x = points(i+1,1)-actual_x;
+        y = points(i+1,2)-actual_y;
+        distance=abs(sqrt(x^2+y^2));    
+        angle = atan2(y,x)-actual_theta;
+        
+        rotate(h,160,angle);
+        stopped = move(h,velocity,velocity,distance);
+    end
+    prevangle = actual_theta;
+end

@@ -1,0 +1,14 @@
+function rotateWhenObstacle( h )
+global distances;
+global actual_theta;
+
+if distances(1) <= 3.5 || distances(8) <= 3  
+     kStop(h);
+     rotate(h,160,(pi/2));
+     readDistances(h);
+         if distances(1) <= 3 || distances(8) <= 3
+               rotate(h,160,pi);
+         end
+end
+end
+

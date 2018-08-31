@@ -1,14 +1,20 @@
 clc;
 clear;
 close all;
+hold on;
+
+%% Initialize robot comm
 
 h= kOpenPort();
 kSetEncoders(h,0,0);
-velocity = 300;
-points = [230,60;230,400];
 
-%hold on;
-axis([0 9 0 9]);
+%% Set constants
+
+velocity = 300;
+points = [230,60;210,340;230,60;210,340];
+
+
+%% Navigate
 
 navigate(h,points,velocity,(pi/2));
 
